@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,c,d;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    d=a+b+c;
+    if(d==180)
+    {
+    
+       if((a=b)&&(b=c)&&(c=a))
+    {
+    cout<<"Prize 3";
+    }
+    else if( (a==90)|| (b==90)||( c==90))
+    {
+        cout<<"Prize 2";
+    }
+    else if((a!=b)&&(a!=c)&&(b!=c))
+    {
+        cout<<"Prize 1";
+    }}
+    else{
+        cout<<"No prize";
+    }}
