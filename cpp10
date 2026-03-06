@@ -1,0 +1,48 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+class comp
+{
+   private:
+      int rl,img;
+   public:
+      void get()
+      {
+         cout<<"enter the number"<<endl;
+         cin>>rl>>img;
+      }
+      void display()
+      {
+         cout<<rl<<"+"<<"j"<<img<<endl;
+      }
+      comp operator +(comp c1)
+      {
+         comp res;
+         res.rl=rl+c1.rl;
+         res.img=img+c1.img;
+         return res;
+      }
+      comp operator /(comp c2)
+      {
+         comp div;
+         float m1= sqrt((rl*rl)+(img*img));
+         float a1= atan(img/rl);
+         float m2= sqrt((c2.rl*c2.rl)+(c2.img*c2.img));
+         float a2= atan(c2.img/c2.rl);
+         float m=m1/m2;
+         float a=a1-a2;
+         div.rl=m*cos(a);
+         div.img=m*sin(a);
+         return div;
+      }
+};
+int main()
+{
+   comp s1,s2,s3,s4;
+   s1.get();
+   s2.get();
+   s3=s1+s2;
+   s3.display();
+   s4=s1/s2;
+   s4.display();
+}
