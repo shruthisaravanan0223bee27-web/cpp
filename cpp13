@@ -1,0 +1,72 @@
+#include<iostream>
+using namespace std;
+class siv
+{
+   public:
+      virtual void display()
+      {
+         cout<<"class siv"<<endl;
+      }
+};
+class clg:public siv
+{
+   public:
+      void display()
+      {
+         cout<<"class clg"<<endl;
+      }};
+class mepco:public clg
+{
+   public:
+      void display()
+      {
+         cout<<"class mepco"<<endl;
+      }
+
+};
+class eee:public mepco
+{
+   public:
+      void display()
+      {
+         cout<<"class eee"<<endl;
+      }
+};
+class fyr:public eee
+{
+   public:
+      void display()
+      {
+         cout<<"class fyr"<<endl;
+      }
+};
+class stud:public fyr
+{
+   public:
+      void display()
+      {
+         cout<<"class stud"<<endl;
+      }
+};
+int main()
+{
+   siv*p;
+   siv b;
+   p=&b;
+   p->display();
+   clg a;
+   p=&a;
+   p->display();
+   mepco c;
+   p=&c;
+   p->display();
+   eee e;
+   p=&e;
+   p->display();
+   fyr f;
+   p=&f;
+   p->display();
+   stud s;
+   p=&s;
+   p->display();
+}
