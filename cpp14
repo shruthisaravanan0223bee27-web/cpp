@@ -1,0 +1,35 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+template<class T>
+int roots(T a,T b, T c)
+{
+   float x1,x2;
+   float x=((b*b)-(4*a*c));
+   if(x==0)
+   {
+      cout<<"roots are real and equal"<<endl;
+      cout<<((-b)/(2*a))<<","<<((-b)/(2*a))<<endl;
+   }
+   else if(x>0)
+   {
+      cout<<"roots are real and distinct"<<endl;
+      x1=((-b+sqrt(x))/(2*a));
+      x2=((-b+sqrt(x))/(2*a));
+      cout<<"roots="<<x1<<" "<<x2<<endl;
+   }
+   else
+   {
+      cout<<"roots are imaginary"<<endl;
+      x1=((-1*b)/(2*a));
+      x2=sqrt((-1)*x)/(2*a);
+      cout<<"root 1="<<x1<<"+i"<<x2<<endl;
+      cout<<"root 2="<<x1<<"-i"<<x2<<endl;
+   }
+}
+main()
+{
+   roots(1,2,1);
+   roots(2.4,4.8,9.2);
+   roots(1,5,1);
+}
